@@ -1,22 +1,22 @@
 # netlify-functions-template
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ace22b90-5f18-4681-89d0-dfa40207706a/deploy-status)](https://app.netlify.com/sites/sample-counter/deploys)
-
 Includes joke access counter sample program.
 
 Note that, The counter disappears when the Lambda instance rebuild.
 
-## Example
-
-![]()
-
-[https://maple4estry.netlify.com/](https://maple4estry.netlify.com/)
-
-## Netlify deploy
+## Netlify Deploy
 
 [![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/h1romas4/netlify-functions-template.git)
 
+## Example
+
+![](https://raw.githubusercontent.com/h1romas4/netlify-functions-template/master/assets/2020-03-30_01-06.png)
+
+[https://maple4estry.netlify.com/](https://maple4estry.netlify.com/)
+
 ## Local build & Devel
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ace22b90-5f18-4681-89d0-dfa40207706a/deploy-status)](https://app.netlify.com/sites/sample-counter/deploys)
 
 ```
 git clone https://github.com/h1romas4/netlify-functions-template.git
