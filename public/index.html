@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<access-counter></access-counter>
+
+<script>
+  fetch('/v1/counter').then(function(response) {
+    return response.json()
+  }).then(function(json) {
+    customElements.define('access-counter',
+      class extends HTMLElement {
+        constructor() {
+          super();
+          const shadowRoot = this.attachShadow({ mode: 'open' });
+          shadowRoot.innerHTML = json.html;
+      }
+    })
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "build": "netlify-lambda --config ./webpack.functions.js build src/functions/endpoint",
+        "devel": "netlify-lambda --config ./webpack.functions.js serve src/functions/endpoint"
+    },
+    "dependencies": {
+        "jsdom": "^16.2.1",
+        "canvas": "file:./src/functions/canvas",
+        "utf-8-validate": "^5.0.2",
+        "bufferutil": "^4.0.1"
+    },
+    "devDependencies": {
+        "netlify-lambda": "^1.6.3",
+        "raw-loader": "^4.0.0"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "canvas dummy for lambda",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}
