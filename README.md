@@ -6,7 +6,7 @@ Note that, The counter disappears when the Lambda instance rebuild.
 
 ## Netlify Deploy
 
-[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/h1romas4/netlify-functions-template.git)
+[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/h1romas4/netlify-functions-template)
 
 ## Example
 
