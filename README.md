@@ -10,9 +10,9 @@ Note that, The counter disappears when the Lambda instance rebuild.
 
 ## Example
 
-![](https://raw.githubusercontent.com/h1romas4/netlify-functions-template/master/assets/2020-03-30_01-06.png)
+![](https://raw.githubusercontent.com/h1romas4/netlify-functions-template/master/assets/2020-03-30_01-19.png)
 
-[https://maple4estry.netlify.com/](https://maple4estry.netlify.com/)
+> [https://maple4estry.netlify.com/](https://maple4estry.netlify.com/)
 
 ## Local build & Devel
 
