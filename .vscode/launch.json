@@ -14,7 +14,12 @@
             "port": 9229,
             "skipFiles": [
                 "<node_internals>/**"
-            ]
+            ],
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${workspaceRoot}/src/functions/endpoint/*",
+                "webpack:///../*": "${workspaceRoot}/src/functions/endpoint/*",
+                "webpack:///*": "*"
+            }
         },
     ]
 }
