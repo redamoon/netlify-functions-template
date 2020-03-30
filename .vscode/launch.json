@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // insert debugger;
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "npm run devel:debug",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "devel:debug"
+            ],
+            "port": 9229,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+    ]
+}

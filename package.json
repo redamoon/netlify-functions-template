@@ -1,7 +1,8 @@
 {
     "scripts": {
         "build": "netlify-lambda --config ./webpack.functions.js build src/functions/endpoint",
-        "devel": "netlify-lambda --config ./webpack.functions.js serve src/functions/endpoint"
+        "devel": "netlify-lambda --config ./webpack.functions.js serve src/functions/endpoint",
+        "devel:debug": "npx --node-arg=--inspect netlify-lambda --config ./webpack.functions.js serve src/functions/endpoint"
     },
     "dependencies": {
         "jsdom": "^16.2.1",

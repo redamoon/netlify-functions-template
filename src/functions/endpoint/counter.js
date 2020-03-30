@@ -24,6 +24,7 @@ const counterHtmlFile = common.tmp + "/counter.html";
  * Lambda エンドポイント
  */
 exports.handler = async (event) => {
+    // debugger;
     const now = new Date();
     let counterJson = {
         "createDate": now,
