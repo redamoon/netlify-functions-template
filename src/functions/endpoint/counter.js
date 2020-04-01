@@ -3,7 +3,6 @@
  *  インスタンスの再生成でカウントは消えます。
  */
 import fs from 'fs';
-import jsdom from 'jsdom';
 import * as common from '../common'
 import html from '../resources/fujilcd.html'
 
@@ -12,8 +11,6 @@ const maxCount = 6;
 
 // async await 版の fs オブジェクト
 const fsp = fs.promises;
-// JSDOM
-const { JSDOM } = jsdom;
 
 // カウンターファイル JSON 出力パス
 const counterJsonFile = common.tmp + "/counter.json";
@@ -44,7 +41,7 @@ exports.handler = async (event) => {
     // カウンターファイル書き込み
     await fsp.writeFile(counterJsonFile, JSON.stringify(counterJson));
     // カウンター数 SVG を生成
-    counterJson.html = updateLCD(html, counterJson.count);
+    counterJson.html = common.updateLCD(html, maxCount, counterJson.count);
     // DOM 操作確認用ファイル書き込み（テスト）
     await fsp.writeFile(counterHtmlFile, counterJson.html);
     // for test "Access-Control-Allow-Origin":  "*"
@@ -57,21 +54,3 @@ exports.handler = async (event) => {
         body: JSON.stringify(counterJson)
     }
 };
-
-function updateLCD(html, number) {
-    const dom = new JSDOM(html);
-    const { document } = dom.window;
-
-    let countString = number + ""
-    countString = ("0".repeat(maxCount) + number);
-    countString = countString.substring(countString.length - maxCount)
-
-    for(let i = 0; i < countString.length; i++) {
-        let number = countString.substring(i, i + 1);
-        const digi = document.querySelector(`.digit-${i} svg`);
-        digi.removeAttribute('class');
-        digi.classList.add(`num-${number}`);
-    }
-
-    return dom.serialize();
-}

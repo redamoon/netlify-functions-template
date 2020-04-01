@@ -7,7 +7,11 @@ command = "npm run build"
 AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
 
 [[redirects]]
-    from = "/v1/*"
-    to = "/.netlify/functions/:splat"
+    from = "/v1/counter"
+    to = "/.netlify/functions/counter"
     status = 200
-    force = true
+
+[[redirects]]
+    from = "/v1/digit/:width/:digit/:number/"
+    to = "/.netlify/functions/digit/?width=:width&digit=:digit&number=:number&"
+    status = 200
