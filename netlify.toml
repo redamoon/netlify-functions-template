@@ -12,6 +12,6 @@ AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
     status = 200
 
 [[redirects]]
-    from = "/v1/digit/:width/:digit/:number/"
-    to = "/.netlify/functions/digit?width=:width&digit=:digit&number=:number"
+    from = "/v1/digit/*"
+    to = "/.netlify/functions/digit"
     status = 200
