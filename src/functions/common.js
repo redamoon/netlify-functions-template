@@ -28,20 +28,36 @@ if(!netlify) {
  * @param Number} number
  * @returns {String}
  */
-export function updateLCD(html, maxCount, number) {
+export function createLCD(html, width, maxCount, number) {
     const dom = new JSDOM(html);
     const { document } = dom.window;
 
+    // create digit DOM
+    let pos = document.querySelector('.digits__inner');
+    const digit = document.importNode(document.querySelector('.digit'), true);
+    for(let i = 1; i < maxCount; i++) {
+        const clone = document.importNode(digit, true);
+        clone.removeAttribute('class');
+        clone.setAttribute('class', `digit digit-${i}`);
+        pos.appendChild(clone);
+    }
+
+    // number padding
     let countString = number + ""
     countString = ("0".repeat(maxCount) + number);
     countString = countString.substring(countString.length - maxCount)
 
+    // light digit
     for(let i = 0; i < countString.length; i++) {
         let number = countString.substring(i, i + 1);
-        const digi = document.querySelector(`.digit-${i} svg`);
-        digi.removeAttribute('class');
-        digi.classList.add(`num-${number}`);
+        const digit = document.querySelector(`.digit-${i} svg`);
+        digit.removeAttribute('class');
+        digit.classList.add(`num-${number}`);
     }
+
+    // set width
+    let digits = document.querySelector('.digits');
+    digits.style = `width: ${width}px;`
 
     return dom.serialize();
 }

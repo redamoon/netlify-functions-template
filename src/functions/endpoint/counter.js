@@ -41,7 +41,7 @@ exports.handler = async (event) => {
     // カウンターファイル書き込み
     await fsp.writeFile(counterJsonFile, JSON.stringify(counterJson));
     // カウンター数 SVG を生成
-    counterJson.html = common.updateLCD(html, maxCount, counterJson.count);
+    counterJson.html = common.createLCD(html, 160, maxCount, counterJson.count);
     // DOM 操作確認用ファイル書き込み（テスト）
     await fsp.writeFile(counterHtmlFile, counterJson.html);
     // for test "Access-Control-Allow-Origin":  "*"

@@ -18,9 +18,9 @@ exports.handler = async (event) => {
         event.queryStringParameters,
         event.path,
         {
-            width : 120,
+            width : 160,
             digit: 6,
-            number: 123456
+            number: 12345
         }
     );
     return {
@@ -28,6 +28,6 @@ exports.handler = async (event) => {
         headers: {
             "Content-Type": "text/html; charset=utf-8",
         },
-        body: common.updateLCD(html, args.digit, args.number)
+        body: common.createLCD(html, args.width, args.digit, args.number)
     };
 };
