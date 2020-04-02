@@ -3,8 +3,8 @@
  *  インスタンスの再生成でカウントは消えます。
  */
 import fs from 'fs';
-import * as common from '../common'
-import html from '../resources/fujilcd.html'
+import * as common from '../common';
+import html from '../resources/fujilcd.html';
 
 // カウンターの最大桁数
 const maxCount = 6;
@@ -52,5 +52,5 @@ exports.handler = async (event) => {
             "Access-Control-Allow-Origin":  "*"
         },
         body: JSON.stringify(counterJson)
-    }
+    };
 };
