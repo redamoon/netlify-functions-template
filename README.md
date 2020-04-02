@@ -29,6 +29,8 @@ browser access
 
 ```
 http://localhost:9000/.netlify/functions/counter
+
+http://localhost:9000/.netlify/functions/digit?width=500&digit=6&number=10
 ```
 
 ## Thanks
